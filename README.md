@@ -14,7 +14,7 @@ Only if your an Antelope Hackclub member you can try it
 
 ## Clone the Repo
 ```bash
-git clone https://github.com/your_username/blahblahblah
+git clone https://github.com/Romanhery/hackclub-discord-bot
 cd hackclub-discord-bot
 ```
 
