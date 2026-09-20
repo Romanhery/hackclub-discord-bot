@@ -18,6 +18,20 @@ git clone https://github.com/your_username/blahblahblah
 cd hackclub-discord-bot
 ```
 
+## Make .env file and populate with credentials
+```bash
+cat << 'EOF' > .env
+CLIENT_ID=""
+GITHUB_TOKEN=""
+GUILD_ID=
+EOF
+```
+
+## Run it !
+```bash
+python3 main.py
+```
+
 ## Built with
 Python 
 Discord.js

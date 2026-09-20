@@ -1,4 +1,4 @@
-# importing all the pre-requisites / libraries
+# impo
 import discord
 import os
 import json
