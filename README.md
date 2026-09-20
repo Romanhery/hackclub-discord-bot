@@ -12,12 +12,10 @@ Only if your an Antelope Hackclub member you can try it
 - You can add your projects easily into our club's website
 - Works only on servers explicity chosen by you!
 
-## Running locally
+## Clone the Repo
 ```bash
 git clone https://github.com/your_username/blahblahblah
-cd project
-npm install
-npm run dev
+cd hackclub-discord-bot
 ```
 
 ## Built with
