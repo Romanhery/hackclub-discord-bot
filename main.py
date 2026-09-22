@@ -40,6 +40,7 @@ GUILD_ID = discord.Object(id=1548789188487417956)
 
 # Slash command for adding a card to the gallery
 @client.tree.command(name="add-gallery", description="Adds to the gallery!",guild=GUILD_ID)
+
 #function for adding card to gallery takes in parameters title link and img
 async def add_Gallery(interaction: discord.Interaction, title:str , link:str , img: str):
     #sends confirmation message
