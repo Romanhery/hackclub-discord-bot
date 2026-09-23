@@ -51,8 +51,6 @@ async def add_Gallery(
 ):
     # sends confirmation message
 
-    await interaction.response.defer()
-
     embed = discord.Embed(
         title=title,
         description="This project is added to the gallery!",
