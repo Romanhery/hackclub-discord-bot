@@ -60,7 +60,7 @@ async def add_Gallery(
     embed.set_author(interaction.user.name)
     embed.add_field(name="Title", value=title)
     embed.add_field(name="Description", value=description)
-    embed.set_thumbnail(url="https://antelope-hackclub.vercel.app/assets/logo.svg")
+    embed.set_thumbnail(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc9rIJuST9RVsvigsumo2Y0gWjeSUL3XxU8UST_mYZ6w&s")
     embed.set_image(url=img)
     embed.set_footer(text="Integrated by yours truly 😉")
     
