@@ -55,10 +55,10 @@ async def add_Gallery(
         title=title,
         description="This project is added to the gallery!",
         url=link,
-        color=discord.Color.red,
+        color=discord.Color.red(),
     )
 
-    embed.set_author(interaction.user.name)
+    embed.set_author(name=interaction.user.name)
     embed.add_field(name="Title", value=title)
     embed.add_field(name="Description", value=description)
     embed.set_thumbnail(url="https://antelope-hackclub.vercel.app/assets/logo.svg")
