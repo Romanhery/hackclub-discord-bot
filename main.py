@@ -27,7 +27,42 @@ class Client(commands.Bot):
             synced = await self.tree.sync(guild=guild)
             print(f'Synced {len(synced)} commands to guild {guild.id}')
         except Exception as e:
-            print(f'Error syncing commands: {e}') 
+            print(f"Error syncing commands: {e}")
+            
+# Intentions/permission set to default
+intents = discord.Intents.default()
+# allows messages
+intents.message_content = True
+# depreciated thing but still need to have
+client = Client(command_prefix="!", intents=intents)
+
+GUILD_ID = discord.Object(id=1548789188487417956)
+
+
+# Slash command for adding a card to the gallery
+@client.tree.command(
+    name="add-gallery", description="Adds to the gallery!", guild=GUILD_ID
+)
+
+# function for adding card to gallery takes in parameters title link and img
+async def add_Gallery(
+    interaction: discord.Interaction, title: str, link: str, img: str, description: str
+):
+    # sends confirmation message
+
+    embed = discord.Embed(
+        title=title,
+        description="This project is added to the gallery!",
+        url=link,
+        color=discord.Color.red,
+    )
+
+    embed.set_author(interaction.user.name)
+    embed.add_field(name="Title", value=title)
+    embed.add_field(name="Description", value=description)
+    embed.set_thumbnail(url="https://antelope-hackclub.vercel.app/assets/logo.svg")
+    embed.set_image(url=img)
+    embed.set_footer(text="Integrated by yours truly 😉")
     
     #Intentions/permission set to default
     intents = discord.Intents.default()
