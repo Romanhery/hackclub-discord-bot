@@ -58,12 +58,12 @@ async def add_Gallery(
         color=discord.Color.red,
     )
 
-    embed.author(interaction.user.name)
+    embed.set_author(interaction.user.name)
     embed.add_field(name="Title", value=title)
     embed.add_field(name="Description", value=description)
     embed.set_thumbnail(url="https://antelope-hackclub.vercel.app/assets/logo.svg")
-    embed.image(url=img)
-    embed.footer(text="Integrated by yours truly 😉")
+    embed.set_image(url=img)
+    embed.set_footer(text="Integrated by yours truly 😉")
     
     await interaction.response.send_message(embed=embed)
 
