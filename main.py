@@ -8,7 +8,6 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from github import Auth, Github
 
-# This loads the enviornment file
 load_dotenv()
 
 # This authorizes the token
@@ -40,11 +39,19 @@ client = Client(command_prefix="!", intents=intents)
 
 GUILD_ID = discord.Object(id=1548789188487417956)
 
+class BotClient(commands.Bot):
+    async def on_ready(self):
+        print(f"Logged on as {self.user}!")
+        try:
+            synced = await self.tree.sync(guild=GUILD_ID)
+            print(f"Synced {len(synced)} commands to guild {GUILD_ID.id}")
+        except Exception as e:
+            print(f"Error syncing commands: {e}")
 
 # Slash command for adding a card to the gallery
 # function for adding card to gallery takes in parameters title link and img
 @client.tree.command(
-    name="add-gallery", description="Adds to the gallery!", guild=GUILD_ID
+    name="add-gallery", description="Adds a project card to the gallery!", guild=GUILD_ID
 )
 async def add_Gallery(
     interaction: discord.Interaction,
